@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Text {
+ 
+	public static void main(String[] args) {
+		System.out.print("Enter a string:");
+    	Scanner input = new Scanner(System.in);
+    	String s = input.nextLine();
+			System.out.print(sort(s)); 
+		 input.close();
+	}
+	public static String sort(String s){
+		char [] ch=s.toCharArray();
+		for(int i=0;i<ch.length-1;i++) {
+			for(int j=i+1;j<ch.length;j++) {
+		        if(ch[i]>ch[j]) {
+			       char t=ch[j];
+			       ch[j]=ch[i];
+			       ch[i]=t;
+		        }
+		    }
+		}
+		String str=new String(ch);
+		return str;
+	}
+}
